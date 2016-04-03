@@ -3,7 +3,7 @@
 //
 //	The debugging routines allow the user to turn on selected
 //	debugging messages, controllable from the command line arguments
-//	passed to Nachos (-d).  You are encouraged to add your own
+//	passed to Nachos (-d).  You are ecnouraged to add your own
 //	debugging flags.  Please....
 //
 // Copyright (c) 1992-1996 The Regents of the University of California.
@@ -58,7 +58,7 @@ extern Debug *debug;
 
 #define DEBUG(flag,expr)                                                     \
     if (!debug->IsEnabled(flag)) {} else { 				\
-        cerr << "[" << __FILE__ << ":" << __LINE__  << "] " << expr << "\n";  \
+      std::cerr << "[" << __FILE__ << ":" << __LINE__  << "] " << expr << "\n"; \
     }
 
 // difference to DEBUG(flag,expr) : additionally prints out the name of the
@@ -67,7 +67,7 @@ extern Debug *debug;
 #define DEBUGT(flag,expr)                                  \
     if (!debug->IsEnabled(flag)) {} else { 		\
       if (kernel->currentThread != NULL) \
-        cerr << "[" << __FILE__ << ":" << __LINE__  << " thread: " << kernel->currentThread->getName() << "] " << expr << "\n";  \
+        std::cerr << "[" << __FILE__ << ":" << __LINE__  << " thread: " << kernel->currentThread->getName() << "] " << expr << "\n"; \
     }
 
 
@@ -80,10 +80,10 @@ extern Debug *debug;
 //	where the error occurred.
 //----------------------------------------------------------------------
 #define ASSERT(condition)                                               \
-    if (condition) {} else { 						\
-	cerr << "Assertion failed: line " << __LINE__ << " file " << __FILE__ << "\n";      \
-        Abort();                                                              \
-    }
+  if (condition) {} else {                                              \
+    std::cerr << "Assertion failed: line " << __LINE__ << " file " << __FILE__ << "\n"; \
+    Abort();                                                            \
+  }
 
 //----------------------------------------------------------------------
 // ASSERTNOTREACHED
@@ -97,7 +97,7 @@ extern Debug *debug;
 
 #define ASSERTNOTREACHED()                                             \
     { 						\
-	cerr << "Assertion failed: line " << __LINE__ << " file " << __FILE__ << "\n";      \
+      std::cerr << "Assertion failed: line " << __LINE__ << " file " << __FILE__ << "\n"; \
         Abort();                                                              \
     }
 
@@ -107,7 +107,7 @@ extern Debug *debug;
 //----------------------------------------------------------------------
 #define UNIMPLEMENTED()                                                      \
 {                                                                            \
-  cerr << "Reached UNIMPLEMENTED function " << __FUNCTION__ << " in file: "  \
+  std::cerr << "Reached UNIMPLEMENTED function " << __FUNCTION__ << " in file: " \
        << __FILE__ << " line: " << __LINE__ << ".\n";                        \
 }
 

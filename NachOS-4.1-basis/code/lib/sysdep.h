@@ -12,10 +12,10 @@
 #define SYSDEP_H
 
 #include "copyright.h"
-#include "iostream.h"
-#include "stdlib.h"
-#include "stdio.h"
-#include "string.h"
+#include <iostream>
+#include <cstdlib>
+#include <cstdio>
+#include <cstring>
 
 // Process control: abort, exit, and sleep
 extern void Abort();

@@ -35,20 +35,20 @@ Statistics::Statistics()
 void
 Statistics::Print()
 {
-    cout << "number of physical memory pages: " << kernel->NumPhysPages
+    std::cout << "number of physical memory pages: " << kernel->NumPhysPages
          << ", TLB size: "<< kernel->TLBSize << "\n";
    #ifdef USE_TLB
-    cout << "Page swaps (read/write): " << kernel->pagefaults << ", TLB misses: " << kernel->tlbmisses << "\n";
+    std::cout << "Page swaps (read/write): " << kernel->pagefaults << ", TLB misses: " << kernel->tlbmisses << "\n";
    #endif
 
-    cout << "Ticks: total " << totalTicks << ", idle " << idleTicks;
-		cout << ", system " << systemTicks << ", user " << userTicks << endl;
-    cout << "Milliseconds: " << getRealTicks() << endl;
-    cout << "Disk I/O: reads " << numDiskReads;
-		cout << ", writes " << numDiskWrites << "\n";
-		cout << "Console I/O: reads " << numConsoleCharsRead;
-    cout << ", writes " << numConsoleCharsWritten << "\n";
-    cout << "Paging: faults " << numPageFaults << "\n";
-    cout << "Network I/O: packets received " << numPacketsRecvd;
-		cout << ", sent " << numPacketsSent << "\n";
+    std::cout << "Ticks: total " << totalTicks << ", idle " << idleTicks;
+		std::cout << ", system " << systemTicks << ", user " << userTicks << std::endl;
+    std::cout << "Milliseconds: " << getRealTicks() << std::endl;
+    std::cout << "Disk I/O: reads " << numDiskReads;
+		std::cout << ", writes " << numDiskWrites << "\n";
+		std::cout << "Console I/O: reads " << numConsoleCharsRead;
+    std::cout << ", writes " << numConsoleCharsWritten << "\n";
+    std::cout << "Paging: faults " << numPageFaults << "\n";
+    std::cout << "Network I/O: packets received " << numPacketsRecvd;
+		std::cout << ", sent " << numPacketsSent << "\n";
 }

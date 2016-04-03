@@ -111,7 +111,7 @@ AddrSpace::Load(char *fileName)
     unsigned int size;
 
     if (executable == NULL) {
-	cerr << "Unable to open file " << fileName << "\n";
+      std::cerr << "Unable to open file " << fileName << "\n";
 	return FALSE;
     }
 
